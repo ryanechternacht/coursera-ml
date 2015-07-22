@@ -34,9 +34,18 @@ for iter = 1:num_iters
     % theta = newTheta;
 
     % vectorized of above
-    theta = theta - alpha/m * (((X * theta) - y)' * X)';
-    % end
+    % theta = theta - alpha/m * (((X * theta) - y)' * X)';
+    theta -= alpha/m * X'*(X*theta-y);
 
+    % (mxn * nx1) - mx1) = mx1
+    % mx1' * mxn = 1xn
+    % 1xn' = nx1
+
+    %X*(X*theta-y))
+
+    % (mxn * nx1) - mx1) = mx1
+    %  mxn' * mx1 = nx1
+    % end
 
 
 
